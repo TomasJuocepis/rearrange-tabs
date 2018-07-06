@@ -54,8 +54,45 @@ chrome.commands.onCommand.addListener(function (command) {
     }
   }
 
-  chrome.tabs.query({ currentWindow: true }, countAll);
-  chrome.tabs.query({ currentWindow: true, pinned: true }, countPinned);
-  chrome.tabs.query({ currentWindow: true, highlighted: true, pinned: true }, movePinnedTabs);
-  chrome.tabs.query({ currentWindow: true, highlighted: true, pinned: false }, moveUnpinnedTabs);
+  var switchActiveTab = function (tabs) {
+    var switchDirection = 1;
+    if ('deselect-and-switch-active-tab-left' == command
+     || 'select-and-switch-active-tab-left' == command) {
+      switchDirection = -1;
+    }
+    var activeTabIndex = 0;
+    for (var i = 0; i < tabs.length; i++) {
+      if (tabs[i].active) {
+        activeTabIndex = i;
+        break;
+      }
+    }
+    var newActiveTabIndex = activeTabIndex + switchDirection;
+    if (newActiveTabIndex === tabs.length) { // handle wrap-around
+      newActiveTabIndex = 0;
+    } else if (newActiveTabIndex === -1) { // handle wrap-around
+      newActiveTabIndex = tabs.length - 1;
+    }
+    // for setting highlighted to true to work, it must first be set to false
+    chrome.tabs.update(tabs[newActiveTabIndex].id, { highlighted: false });
+    chrome.tabs.update(tabs[newActiveTabIndex].id, { highlighted: true });
+    if ('deselect-and-switch-active-tab-left' == command
+     || 'deselect-and-switch-active-tab-right' == command) {
+      chrome.tabs.update(tabs[activeTabIndex].id, { highlighted: false });
+    }
+  }
+
+  if ('deselect-and-switch-active-tab-left' == command
+   || 'deselect-and-switch-active-tab-right' == command
+   || 'select-and-switch-active-tab-left' == command
+   || 'select-and-switch-active-tab-right' == command) {
+    // change tab selection
+    chrome.tabs.query({ currentWindow: true }, switchActiveTab);
+  } else {
+    // move selected tabs
+    chrome.tabs.query({ currentWindow: true }, countAll);
+    chrome.tabs.query({ currentWindow: true, pinned: true }, countPinned);
+    chrome.tabs.query({ currentWindow: true, highlighted: true, pinned: true }, movePinnedTabs);
+    chrome.tabs.query({ currentWindow: true, highlighted: true, pinned: false }, moveUnpinnedTabs);
+  }
 });

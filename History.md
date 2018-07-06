@@ -1,4 +1,10 @@
 
+2.2.0 / 2018-07-05
+==================
+
+  * Add feature to switch active tab left or right
+  * Add feature to select/deselect tabs while switching left or right
+
 2.1.0 / 2018-07-05
 ==================
 

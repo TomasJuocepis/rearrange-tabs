@@ -10,23 +10,34 @@ Rearrange Tabs has been featured on [LifeHacker](http://lifehacker.com/this-exte
 
 - To move selected tab(s) left
 
-  - `Mac`: <kbd>Ctrl</kbd>-<kbd>Shift</kbd>-<kbd>Left</kbd>
+  - `Mac`: <kbd>Command</kbd>-<kbd>Shift</kbd>-<kbd>Left</kbd>
   - `Windows`: <kbd>Shift</kbd>-<kbd>Alt</kbd>-<kbd>Left</kbd>
 
 - To move selected tab(s) right
 
-  - `Mac`: <kbd>Ctrl</kbd>-<kbd>Shift</kbd>-<kbd>Right</kbd>
+  - `Mac`: <kbd>Command</kbd>-<kbd>Shift</kbd>-<kbd>Right</kbd>
   - `Windows`: <kbd>Shift</kbd>-<kbd>Alt</kbd>-<kbd>Right</kbd>
 
 - To move selected tab(s) to the front (leftmost position)
 
-  - `Mac`: <kbd>Ctrl</kbd>-<kbd>Shift</kbd>-<kbd>Down</kbd>
+  - `Mac`: <kbd>Command</kbd>-<kbd>Shift</kbd>-<kbd>Down</kbd>
   - `Windows`: <kbd>Shift</kbd>-<kbd>Alt</kbd>-<kbd>Down</kbd>
 
 - To move selected tab(s) to the end (rightmost position)
 
-  - `Mac`: <kbd>Ctrl</kbd>-<kbd>Shift</kbd>-<kbd>Up</kbd>
+  - `Mac`: <kbd>Command</kbd>-<kbd>Shift</kbd>-<kbd>Up</kbd>
   - `Windows`: <kbd>Shift</kbd>-<kbd>Alt</kbd>-<kbd>Up</kbd>
+
+- Additional functionality without default shortcuts (see below on how to configure shortcuts)
+
+  - Switch active tab to the left and deselect previous tab if selected
+    suggested shortcut: <kbd>Ctrl</kbd>-<kbd>Shift</kbd>-<kbd>Left</kbd>
+  - Switch active tab to the right and deselect previous tab if selected
+    suggested shortcut: <kbd>Ctrl</kbd>-<kbd>Shift</kbd>-<kbd>Right</kbd>
+  - Switch active tab to the left while keeping previous tab selected
+    suggested shortcut: <kbd>Ctrl</kbd>-<kbd>Shift</kbd>-<kbd>Down</kbd>
+  - Switch active tab to the right while keeping previous tab selected
+    suggested shortcut: <kbd>Ctrl</kbd>-<kbd>Shift</kbd>-<kbd>Up</kbd>
 
 It's as simple as that. Here's how it looks like: [https://www.youtube.com/watch?v=A1X3geKtF8A](https://www.youtube.com/watch?v=A1X3geKtF8A)
 
